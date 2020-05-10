@@ -7,9 +7,11 @@ void func(vector<int>vec,int k){
     int i=0;
     int j=0;
     int temp=0;
+    bool b= false;
     while(i<vec.size()){
         temp=temp+vec[j];
         if(temp==k){
+            b= true;
             break;
         }
         else if(temp<k){
@@ -21,7 +23,13 @@ void func(vector<int>vec,int k){
             temp=0;
         }
     }
-    cout<<i+1<<" "<<j+1;
+    if(b) {
+
+        cout << i + 1 << " " << j + 1<<endl;
+    }
+    else{
+        cout<<-1<<endl;
+    }
 
 }
 
