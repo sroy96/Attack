@@ -24,7 +24,6 @@ void func(vector<int>vec,int k){
         }
     }
     if(b) {
-
         cout << i + 1 << " " << j + 1<<endl;
     }
     else{
