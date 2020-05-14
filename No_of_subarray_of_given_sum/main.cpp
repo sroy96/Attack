@@ -1,3 +1,6 @@
+/**
+ * Count number of subarray with given sum
+ */
 #include<iostream>
 #include<vector>
 #include<map>
