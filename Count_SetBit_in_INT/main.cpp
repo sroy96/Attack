@@ -1,4 +1,5 @@
 #include <iostream>
+#include <math.h>
 using namespace std;
 
 int count_number_of_setbits(int n){
@@ -7,6 +8,7 @@ int count_number_of_setbits(int n){
         n=n&(n-1); // and operation between 9 & 8==1 and 8&7===0 (stops here)
         countSetBits++;
     }
+    sqrt()
     return countSetBits;
 }
 
