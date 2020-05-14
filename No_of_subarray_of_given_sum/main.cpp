@@ -1,44 +1,40 @@
-/**
- * Count number of subarray with given sum
- */
-#include<iostream>
-#include<vector>
-#include<map>
+// C++ code to print all possible subarrays
+// for given array using recursion
+
+#include <iostream>
+# include <vector>
 using namespace std;
 
-/**
- * sum = required sum
- * map to store all the current sums so that any time current sum is to be added to any other
- * element we can get it from map that how many times we have that sum combination
- * to know number if possible pairs.
- * @param vec
- * @param sum
- */
-void number_of_subarray(vector<int>vec,int sum){
-    int res=0;
-    int currsum=0;
-    map<int,int>mp; //store the
-    for(int i=0;i<vec.size();i++){
-        currsum=currsum+vec[i];
+// Recursive function to print all possible subarrays
+// for given array
+void printSubArrays(vector<int> arr, int start, int end)
+{
+    // Stop if we have reached the end of the array
+    if (end == arr.size())
+        return;
 
-        if(currsum==sum){
-            res++;
+        // Increment the end point and start from 0
+    else if (start > end)
+        printSubArrays(arr, 0, end + 1);
+
+        // Print the subarray and increment the starting point
+    else
+    {
+        cout << "[";
+        for (int i = start; i < end; i++){
+            cout << arr[i] << ", ";
         }
 
-        if(mp.find(currsum-sum)!=mp.end()){
-            res=res+mp[currsum-sum];
-        }
-
-        mp[currsum-sum]++;
+        cout << arr[end] << "]" << endl;
+        printSubArrays(arr, start + 1, end);
     }
 
-    cout<<res<<endl;
-
+    return;
 }
 
-int main(){
-    vector<int>vec{-10,2,-2,-20,10};
-    int sum=-10;
-    number_of_subarray(vec,sum);
+int main()
+{
+    vector<int> arr = {1,2,3};
+    printSubArrays(arr, 0, 0);
     return 0;
 }
