@@ -14,7 +14,7 @@ void printOccurrences(string txt, string pat)
 
 int main()
 {
-    string txt = "leetcode", pat = "et";
+    string txt = "csjdbhjf", pat = "et";
     printOccurrences(txt, pat);
     return 0;
 }
